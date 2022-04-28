@@ -1,10 +1,12 @@
 <?php
 
 namespace Training\Feedback\Block\Adminhtml\Feedback\Edit;
+
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
-    public function getButtonData()
+    public function getButtonData(): array
     {
         return [
             'label' => __('Back'),
@@ -13,7 +15,7 @@ class BackButton extends GenericButton implements ButtonProviderInterface
             'sort_order' => 10
         ];
     }
-    public function getBackUrl()
+    public function getBackUrl(): string
     {
         return $this->getUrl('*/*/');
     }
