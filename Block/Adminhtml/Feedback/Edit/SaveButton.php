@@ -1,12 +1,13 @@
 <?php
 
 namespace Training\Feedback\Block\Adminhtml\Feedback\Edit;
+
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 use Magento\Ui\Component\Control\Container;
 
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
-    public function getButtonData()
+    public function getButtonData(): array
     {
         return [
             'label' => __('Save'),
@@ -33,7 +34,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
             'options' => $this->getOptions(),
         ];
     }
-    private function getOptions()
+    private function getOptions(): array
     {
         $options = [
             [

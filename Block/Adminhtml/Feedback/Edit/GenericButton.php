@@ -6,6 +6,7 @@ use Magento\Backend\Block\Widget\Context;
 class GenericButton
 {
     protected $context;
+
     public function __construct(
         Context $context
     ) {
