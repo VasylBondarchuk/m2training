@@ -96,11 +96,4 @@ class Edit extends Action
         }
         return $exist;
     }
-
-    private function redirectToIndexPage() : Redirect
-    {
-        $this->messageManager->addErrorMessage(__('This feedback does not exist.'));
-        $resultRedirect = $this->resultRedirectFactory->create();
-        return $resultRedirect->setPath('*/*/');
-    }
 }
