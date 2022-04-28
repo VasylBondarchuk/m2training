@@ -116,7 +116,6 @@ class MassDelete extends Action implements HttpPostActionInterface
                 )
             );
         }
-
         return $this->resultFactory->create(ResultFactory::TYPE_REDIRECT)->setPath('training_feedback/*/index');
     }
 }

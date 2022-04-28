@@ -19,6 +19,9 @@ use Training\Feedback\Model\ResourceModel\Feedback\CollectionFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 
+/**
+ *
+ */
 class MassStatus extends Action implements HttpPostActionInterface
 {
     /**
@@ -37,7 +40,9 @@ class MassStatus extends Action implements HttpPostActionInterface
      */
     protected $collectionFactory;
 
-
+    /**
+     * @var FeedbackRepositoryInterface
+     */
     private $feedbackRepository;
 
     /**
@@ -46,6 +51,13 @@ class MassStatus extends Action implements HttpPostActionInterface
     private $logger;
 
 
+    /**
+     * @param Context $context
+     * @param Filter $filter
+     * @param CollectionFactory $collectionFactory
+     * @param FeedbackRepositoryInterface $feedbackRepository
+     * @param LoggerInterface|null $logger
+     */
     public function __construct(
         Context                   $context,
         Filter                    $filter,
@@ -99,7 +111,6 @@ class MassStatus extends Action implements HttpPostActionInterface
                 )
             );
         }
-
         return $this->resultFactory->create(ResultFactory::TYPE_REDIRECT)->setPath('training_feedback/*/index');
     }
 }
