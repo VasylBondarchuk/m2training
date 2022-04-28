@@ -11,11 +11,11 @@ class GenericButton
     ) {
         $this->context = $context;
     }
-    public function getFeedbackId()
+    public function getFeedbackId(): int
     {
         return (int)$this->context->getRequest()->getParam('feedback_id');
     }
-    public function getUrl($route = '', $params = [])
+    public function getUrl($route = '', $params = []): string
     {
         return $this->context->getUrlBuilder()->getUrl($route, $params);
     }
